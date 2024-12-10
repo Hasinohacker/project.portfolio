@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Portfolio - Ismail Hassan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black; /* Set background to black */
+            color: white; /* Change text color to white for readability */
+        }
+
+        /* Certifications */
+        .certification-box {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #343a40; /* Darker certification box */
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        .certification-box img {
+            max-width: 70%;
+            margin-bottom: 10px;
+        }
+        .certification-box p {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .certification-box a {
+            font-size: 12px;
+            color: #007BFF; /* Keep link color */
+            text-decoration: none;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 4rem 0;
+            background-color: #212529; /* Dark background for skills section */
+        }
+        .skills-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills-list li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Green Boxes for Skills */
+        .skill-box {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 1rem;
+            width: auto;
+        }
+
+        /* About Me Section */
+        #about {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #212529; /* Dark background for about section */
+        }
+        #about img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        #about h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        #about p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 4rem 0;
+            background-color: #212529; /* Dark background for education section */
+        }
+        .education-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .education-item {
+            background-color: #343a40; /* Darker background for education items */
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 4rem 0;
+            background-color: #212529; /* Dark background for projects section */
+        }
+        .projects-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #343a40; /* Darker background for project cards */
+        }
+        .project-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .project-card .card-body {
+            padding: 15px;
+        }
+        .project-card h5 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #007BFF; /* Keep primary link color */
+        }
+        .project-card p {
+            font-size: 1.1rem;
+            color: #ffffff; /* Light text color for project descriptions */
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 767px) {
+            .col-md-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .education-item {
+                padding: 15px;
+            }
+
+            .project-card {
+                padding: 10px;
+            }
+
+            .education-item h5 {
+                font-size: 1.4rem;
+            }
+
+            .education-item p {
+                font-size: 1rem;
+            }
+
+            .project-card h5 {
+                font-size: 1.4rem;
+            }
+
+            .project-card p {
+                font-size: 1rem;
+            }
+
+            /* Skills Section */
+            .skills-list li {
+                display: inline-block;
+                width: 45%; /* Two items per row */
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+    .mentor-card img {
+        max-width: 150px; /* Adjust the size as needed */
+        max-height: 150px;
+        margin: 0 auto;
+        display: block;
+    }
+    .mentor-card h1 {
+        font-size: 1.5rem; /* Adjust size for mentor names */
+        margin-top: 1rem;
+    }
+    .mentor-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+</style>
+
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-5 text-center">
+        <div class="container">
+            <h1 class="mb-4">Hello! I’m Ismail Hassan</h1>
+            <p class="lead"><h3 class="mb-4">A security researcher, penetration tester, and bug hunter. I am ranked #5 on the TryHackMe leaderboard Wall of Fame in Nigeria and actively work part time as a security researcher on platforms like HackerOne, Bugcrowd, YesWeHack, and Intigriti.</h3></p>
+            <img src="IMG_7771.jpeg" alt="Ismail Hassan" class="img-fluid rounded-circle">
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Certifications</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="download.jpg" alt="Foundations of Cybersecurity" class="img-fluid">
+                        <p><strong>Foundations of Cybersecurity</strong></p>
+                        <a href="Screenshot_20241210-083045.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="LinkedIn_logo_initials.png" alt="LinkedIn Logo" class="img-fluid">
+                        <p><strong>Development Your Emotional Intelligence</strong></p>
+                        <a href="Screenshot_20241210-083007.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="cisco networking.webp" alt="Cisco Logo" class="img-fluid">
+                        <p><strong>English For IT 1 Course</strong></p>
+                        <a href="Screenshot_20241210-083036.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="IBM-cybersecurity-PC.png" alt="IBM Logo" class="img-fluid">
+                        <p><strong>Cybersecurity Breach Case Studies</strong></p>
+                        <a href="Screenshot_20241210-083028.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="IBM-cybersecurity-PC.png" alt="IBM Logo" class="img-fluid">
+                        <p><strong>IBM Cybersecurity Analyst Assessment</strong></p>
+                        <a href="Screenshot_20241210-083052.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="cisco networking.webp" alt="Cisco Logo" class="img-fluid">
+                        <p><strong>Ethical Hacker</strong></p>
+                        <a href="Screenshot_20241210-082953.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="ec council.png" alt="EC-Council Logo" class="img-fluid">
+                        <p><strong>Introduction to Dark Web, Anonymity, and Cryptocurrency</strong></p>
+                        <a href="Screenshot_20241210-083000.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="download.jpg" alt="Coursera Logo" class="img-fluid">
+                        <p><strong>Network Security & Database Vulnerabilities</strong></p>
+                        <a href="Screenshot_20241210-083147.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="ec council.png" alt="Certification 9 Logo" class="img-fluid">
+                        <p><strong>Ethical Hacking Essential (EHE)</strong></p>
+                        <a href="Screenshot_20241210-082938.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="IBM-cybersecurity-PC.png" alt="" class="img-fluid">
+                        <p><strong>Penetration Testing, Incident Response And Forensics</strong></p>
+                        <a href="Screenshot_20241210-082945.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="cisco networking.webp" alt="Certification 11 Logo" class="img-fluid">
+                        <p><strong>Introduction To CyberSecurity</strong></p>
+                        <a href="Screenshot_20241210-083021.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="certification-box">
+                        <img src="ec council.png" alt="Certification 12 Logo" class="img-fluid">
+                        <p><strong>Python For Absolute Beginner</strong></p>
+                        <a href="Screenshot_20241210-083013.jpg" target="_blank">View Certification</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- More button, without content (feature for later) -->
+    <div class="text-center mt-4">
+        <button class="btn btn-secondary" id="moreCertificationsBtn">More</button>
+      </div>
+    </div>
+
+
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="education-title">Education</h2>
+            <div class="education-item">
+                <h1>Degree in Economics</h1>
+                <p class="institution">Kaduna State University</p>
+                <p>Currently pursuing a degree in Economics with a focus on economic theory, quantitative analysis, and policy development.</p>
+            </div>
+            <div class="education-item">
+                <h1>Online Course: Microeconomics</h1>
+                <p class="institution">University of Illinois Urbana-Champaign (Virtual)</p>
+                <p>Enrolled in an online Microeconomics course to deepen understanding of economic principles and their application in real-world scenarios.</p>
+            </div>
+        </div>
+         <!-- More button, without content (feature for later) -->
+    <div class="text-center mt-4">
+        <button class="btn btn-secondary" id="moreCertificationsBtn">More</button>
+      </div>
+    </div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="projects-title">Projects</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="vulnerability scanner tool.jpg" alt="Project 1">
+                        <div class="card-body">
+                            <h5>Web Application Vulnerability Scanner</h5>
+                            <p>A Python-based tool to identify vulnerabilities like XSS and SQL Injection in web applications.</p>
+                            <a href="https://github.com/Hasinohacker/Hello_test" class="btn btn-primary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="custom wordlist.jpg" alt="Project 2">
+                        <div class="card-body">
+                            <h5>Custom Wordlist Generator</h5>
+                            <p>A tool to generate custom wordlists for brute-forcing login pages, directories, or APIs.</p>
+                            <a href="https://github.com/Hasinohacker/Hello_test" class="btn btn-primary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="2 owasp.png" alt="Project 3">
+                        <div class="card-body">
+                            <h5>OWASP Top 10 Exploitation</h5>
+                            <p>Documented and demonstrated exploits for each vulnerability in the OWASP Top 10 using legal test environments.</p>
+                            <a href="https://github.com/Hasinohacker/Hello_test" class="btn btn-primary">View Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- More button, without content (feature for later) -->
+    <div class="text-center mt-4">
+        <button class="btn btn-secondary" id="moreCertificationsBtn">More</button>
+      </div>
+    </div>
+
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="skills-title">Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Technical Skills</h5>
+                    <ul class="skills-list">
+                        <li><span class="skill-box">Penetration Testing</span></li>
+                        <li><span class="skill-box">Vulnerability Assessment</span></li>
+                        <li><span class="skill-box">Python Programming</span></li>
+                        <li><span class="skill-box">Web Application Security</span></li>
+                        <li><span class="skill-box">SQL Injection & XSS Attacks</span></li>
+                        <li><span class="skill-box">Linux Security</span></li>
+                        <li><span class="skill-box">CTF Player</span></li>
+                        <li><span class="skill-box">Bug Hunting</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Soft Skills</h5>
+                    <ul class="skills-list">
+                        <li><span class="skill-box">Problem Solving</span></li>
+                        <li><span class="skill-box">Critical Thinking</span></li>
+                        <li><span class="skill-box">Time Management</span></li>
+                        <li><span class="skill-box">Team Collaboration</span></li>
+                        <li><span class="skill-box">Communication Skills</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+          <!-- More button, without content (feature for later) -->
+    <div class="text-center mt-4">
+        <button class="btn btn-secondary" id="moreCertificationsBtn">More</button>
+      </div>
+    </div>
+
+
+    </section>
+
+    <section id="mentors" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Mentors</h2>
+            <div class="row">
+                <!-- Mentor 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="mentor-card text-center">
+                        <img src="Screenshot_20241210-095342.jpg" alt="Shuaibu Ismail" class="rounded-circle">
+                        <h1>Shuaibu Ismail</h1>
+                        <p>Analyst @ Dangote Petroleum Refining Company | Proficient in R, SQL, Excel, and Tableau | Environmental Analyst | Freelancer</p>
+                        <p><a href="https://linkedin.com/in/shuaibu-ismail-85724721b" target="_blank">View LinkedIn Profile</a></p>
+                    </div>
+                </div>
+                <!-- Mentor 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="mentor-card text-center">
+                        <img src="Screenshot_20241210-104024.jpg" alt="Ismail Saadina" class="rounded-circle">
+                        <h1>Ismail Saadina</h1>
+                        <p>Geology | Geologist in Training | Intermediate Geotechnical Field/Lab Technician</p>
+                        <p><a href="https://linkedin.com/in/saadina" target="_blank">View LinkedIn Profile</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h5>Contact Me</h5>
+            <form id="contact-form" class="mb-4">
+                <input type="text" id="user-name" placeholder="Your Name" class="form-control mb-2" required>
+                <input type="email" id="user-email" placeholder="Your Email" class="form-control mb-2" required>
+                <input type="text" id="user-phone" placeholder="Your Phone Number" class="form-control mb-2" required>
+                <textarea id="message" placeholder="Your Message" class="form-control mb-2" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="social-links mb-3">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="linkedin.com/in/ismail-hassan-1229a92a7" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text
